@@ -7,14 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
+#import "PersonWatcher.h"
 
 int main (int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        PersonWatcher *watcher = [PersonWatcher new];
+        Person *person = [Person new];
+        
+        [watcher watchPersonForChangeOfAddress:person];
+        
+        person.name = @"Christopher";
+        person.name = @"Christopher";        
         
     }
     return 0;
